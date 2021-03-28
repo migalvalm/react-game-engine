@@ -1,0 +1,20 @@
+.title {
+  width: calc(9px * var(--pixel-size));
+  margin-bottom: calc(2px * var(--pixel-size));
+  display: block;
+}
+.healthbar {
+  width: calc(38px * var(--pixel-size));
+  margin: 0 auto calc(2px * var(--pixel-size)) auto;
+  display: block;
+}
+
+.healthbar_fill {
+/*    width: 100%; */
+  fill: var(--bar-fill);
+  transition: width 0.1s ease-in, fill 0.2s linear;
+}
+.healthbar_fill-top {
+  fill: var(--bar-top);
+}
+

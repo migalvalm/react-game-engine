@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
+import { Character } from './components/Character/Character';
+import { defaultCharacter } from './props/characterProps';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Character character={defaultCharacter} />
   </React.StrictMode>,
   document.getElementById('root')
 );
+
