@@ -11,6 +11,7 @@ const CharacterModel = ({src}) => {
     <img class="Character_spritesheet pixelart" src={src} alt="Character" />
   )
 }
+
 export const Character = ({character}) => {
   return (
     <div className="Character">
