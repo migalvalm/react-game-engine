@@ -1,13 +1,11 @@
-import { ENUM_STRIPE_SKINS } from '../props/spriteProps'
-import { Player } from './Player/Player';
-
+import { MapCreator } from './MapCreator/MapCreator.js'
 import './styles.css'
 
 export const App = () => {
-  return (
-    <div className="zone-container"> 
-      <Player skin={ENUM_STRIPE_SKINS.m1} />
-    </div>
+  return ( 
+    <div>
+      <MapCreator />
+    </div> 
   );
 };
  
