@@ -1,6 +1,6 @@
 export const Sprite = ({ image, data, position }) => {
   const { y, x, h, w } = data;
-
+  console.log(image);
   return (
     <div
       style={
@@ -12,7 +12,7 @@ export const Sprite = ({ image, data, position }) => {
           width: `${w}px`,
           backgroundImage: `url(${image})`,
           backgroundRepeat: "no-repeat",
-          backgroundPosition: `-${x}px -${y}px`,
+          backgroundPosition: `${x}px ${y}px`,
         }
       }
     />

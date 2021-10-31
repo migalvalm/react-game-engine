@@ -1,19 +1,25 @@
-import { Actor } from '../Actor/Actor';
-import { useKeyPress } from "../../hooks/use-key-press/useKeyPress";
-import { useWalk } from "../../hooks/use-walk/useWalk"
+import { useState } from 'react';
+
+import { Actor } from 'components/Actor/Actor';
+import { useKeyPress } from "hooks/useKeyPress";
+import { useWalk } from "hooks/useWalk";
+import { buttonToAction } from 'helpers/buttonToAction';
+
 export const Player = ({ skin }) => {
-  const { dir, step, walk, position } = useWalk(3, 16)
+  const { dir, step, walk, position } = useWalk(4, 16)
+  const [action, setAction] = useState(buttonToAction.PLAYER_ACTIONS.idle)
+
   const data = {
-    h: 32,
-    w: 32
+    h: 44,
+    w: 44
   };
 
   useKeyPress((e) => {
     walk(e.key.replace("Arrow", "").toLowerCase());
 
-
+    setAction(buttonToAction(e.key.toLowerCase()))
     e.preventDefault();
   })
 
-  return <Actor sprite={skin} data={data} step={step} dir={dir} position={position} />
+  return <Actor sprite={skin} action={action} data={data} step={step} dir={dir} position={position} />
 };

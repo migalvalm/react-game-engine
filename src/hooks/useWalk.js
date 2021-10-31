@@ -1,28 +1,27 @@
 import { useState, useCallback } from "react";
 
 const DIRECTIONS = {
-  down: 0,
-  left: 1,
-  right: 2,
-  up: 3,
+  s: 0,
+  d: 1,
+  a: 2,
+  w: 3,
 };
 
 function getModifier(stepSize) {
   return (
     {
-      down: { x: 0, y: stepSize },
-      left: { x: -stepSize, y: 0 },
-      right: { x: stepSize, y: 0 },
-      up: { x: 0, y: -stepSize }
+      s: { x: 0, y: stepSize },
+      d: { x: -stepSize, y: 0 },
+      a: { x: stepSize, y: 0 },
+      w: { x: 0, y: -stepSize }
     }
   );
 }
 
-export function useWalk(maxSteps, stepSize) {
+export const useWalk = (maxSteps=4, stepSize=16) => {
   const [position, setPosition] = useState({x: 0, y: 0});
   const [dir, setDir] = useState(0)
   const [step, setStep] = useState(0)
-
   const move = useCallback((dir) => {
     setPosition({
       x: position.x + getModifier(stepSize)[dir].x,

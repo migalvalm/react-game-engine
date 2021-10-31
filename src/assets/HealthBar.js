@@ -1,4 +1,4 @@
-import './HealthBar.scss';
+import 'assets/HealthBar.scss';
 
 export const HealthBar = () => { 
     return (

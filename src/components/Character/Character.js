@@ -1,4 +1,4 @@
-import './Character.scss';
+import 'assets/Character/Character.scss';
 
 const CharacterShadow = ({src}) => {
   return (
