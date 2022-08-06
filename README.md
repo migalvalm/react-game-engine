@@ -1,1 +1,1 @@
-an React based Game Engine
+React based Game Engine
